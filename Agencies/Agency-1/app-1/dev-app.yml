@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-1-prod
+  name: app-1-dev
   namespace: argocd
 spec:
   generators:
@@ -12,7 +12,7 @@ spec:
       files:
         - path: "./Agencies/Agency-1/App-1/app.yml"
   destination:
-    namespace: prod
+    namespace: dev
     server: 'https://kubernetes.default.svc'
   source:
     path: "./Agencies/Agency-1"
