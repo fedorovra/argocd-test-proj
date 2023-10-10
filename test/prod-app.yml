@@ -1,6 +1,6 @@
 ---
 apiVersion: argoproj.io/v1alpha1
-kind: Application
+kind: ApplicationSet
 metadata:
   name: test-app-1-prod
   namespace: argocd
@@ -11,6 +11,9 @@ spec:
       revision: HEAD
       files:
         - path: "./test/app.yml"
+  template:
+    metadata:
+      name: prod
   destination:
     namespace: prod
     server: 'https://kubernetes.default.svc'
