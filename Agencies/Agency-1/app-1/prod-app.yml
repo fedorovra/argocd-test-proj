@@ -6,7 +6,7 @@ metadata:
   namespace: argocd
 spec:
   generators:
-    git:
+  - git:
       repoURL: "https://github.com/fedorovra/argocd-test-proj.git"
       revision: HEAD
       files:
