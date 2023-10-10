@@ -9,13 +9,39 @@ spec:
     namespace: argocd
     server: 'https://kubernetes.default.svc'
   source:
-    path: "./Agencies/Agency-1/App-1"
+    path: "./Agencies/Agency-1"
     repoURL: 'https://github.com/fedorovra/argocd-test-proj.git'
     targetRevision: HEAD
     directory:
       recurse: true
   project: default
   syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - Validate=true
+
+
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: agency-1
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://demo-mars.gitlab.yandexcloud.net/mars/service-layer.git
+    targetRevision: main
+    path: ./agency-1
+    directory:
+      recurse: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy: 
     automated:
       prune: true
       selfHeal: true
