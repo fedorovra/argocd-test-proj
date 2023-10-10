@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: agency-1
+  name: app-1-prod
   namespace: prod
 spec:
   generators:
