@@ -3,7 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
   name: app-1-prod
-  namespace: argocd
+  namespace: prod
 spec:
   generators:
     git:
@@ -12,10 +12,10 @@ spec:
       files:
         - path: "./Agencies/Agency-1/App-1/app.yml"
   destination:
-    namespace: argocd
+    namespace: prod
     server: 'https://kubernetes.default.svc'
   source:
-    path: "./Agencies/Agency-1"
+    path: "./Agencies/Agency-1/App-1"
     repoURL: 'https://github.com/fedorovra/argocd-test-proj.git'
     targetRevision: HEAD
     directory:
