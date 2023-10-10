@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: agency-1
+  name: agency
   namespace: argocd
 spec:
   description: Agency 1
