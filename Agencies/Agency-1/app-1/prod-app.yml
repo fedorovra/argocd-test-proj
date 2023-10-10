@@ -7,15 +7,15 @@ metadata:
 spec:
   generators:
     git:
-      repoURL: https://demo-mars.gitlab.yandexcloud.net/agency/deploy-stage-prod.git
+      repoURL: "https://github.com/fedorovra/argocd-test-proj.git"
       revision: HEAD
       files:
-        - path: "Agencies/Agency-1/App-1/app.yml"
+        - path: "./Agencies/Agency-1/App-1/app.yml"
   destination:
     namespace: prod
     server: 'https://kubernetes.default.svc'
   source:
-    path: "Agencies/Agency-1/App-1"
+    path: "./Agencies/Agency-1/App-1"
     repoURL: 'https://github.com/fedorovra/argocd-test-proj.git'
     targetRevision: HEAD
     directory:
