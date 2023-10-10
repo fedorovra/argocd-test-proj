@@ -9,7 +9,7 @@ spec:
     namespace: argocd
     server: 'https://kubernetes.default.svc'
   source:
-    path: "./Agencies/Agency-1/App-1"
+    path: "./Agencies/Agency-1"
     repoURL: 'https://github.com/fedorovra/argocd-test-proj.git'
     targetRevision: HEAD
     directory:
