@@ -6,6 +6,8 @@ metadata:
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
+  labels:
+    name: prod-app-1
 spec:
   destination:
     namespace: prod
