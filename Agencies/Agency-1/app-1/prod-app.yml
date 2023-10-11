@@ -8,6 +8,7 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
   labels:
     name: prod-app-1
+    instance: prod-app-1
 spec:
   destination:
     namespace: prod

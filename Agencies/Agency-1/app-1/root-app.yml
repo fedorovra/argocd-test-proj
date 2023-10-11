@@ -8,6 +8,7 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
   labels:
     name: root-app-1
+    instance: root-app-1
 spec:
   destination:
     namespace: default
