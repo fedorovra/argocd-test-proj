@@ -11,7 +11,7 @@ spec:
     namespace: default
     server: 'https://kubernetes.default.svc'
   source:
-    path: "./Agencies/Agency-1"
+    path: "./Agencies/Agency-1/root-app.yml"
     repoURL: 'https://github.com/fedorovra/argocd-test-proj.git'
     targetRevision: HEAD
     directory:
