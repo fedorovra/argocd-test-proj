@@ -14,6 +14,8 @@ spec:
     path: "./Agencies/Agency-1/app-1/"
     repoURL: 'https://github.com/fedorovra/argocd-test-proj.git'
     targetRevision: HEAD
+    directory:
+      recurse: true
   project: default
   syncPolicy:
     automated:
