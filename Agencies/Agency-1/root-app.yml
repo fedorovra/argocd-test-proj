@@ -4,9 +4,11 @@ kind: Application
 metadata:
   name: agency-1
   namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: argocd
+    namespace: default
     server: 'https://kubernetes.default.svc'
   source:
     path: "./Agencies/Agency-1"

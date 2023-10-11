@@ -4,16 +4,16 @@ kind: Application
 metadata:
   name: app-1
   namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: argocd
+    namespace: default
     server: 'https://kubernetes.default.svc'
   source:
-    path: "./Agencies/Agency-1"
+    path: "./Agencies/Agency-1/App-1"
     repoURL: 'https://github.com/fedorovra/argocd-test-proj.git'
     targetRevision: HEAD
-    directory:
-      recurse: true
   project: default
   syncPolicy:
     automated:
