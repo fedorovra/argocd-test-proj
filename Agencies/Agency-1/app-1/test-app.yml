@@ -6,9 +6,6 @@ metadata:
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
-  labels:
-    name: test-app-1
-    app.kubernetes.io/instance: test-app-1
 spec:
   destination:
     namespace: test
