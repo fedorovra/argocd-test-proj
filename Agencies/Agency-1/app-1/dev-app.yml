@@ -1,6 +1,6 @@
 ---
 apiVersion: argoproj.io/v1alpha1
-kind: ApplicationSet
+kind: Application
 metadata:
   name: app-1-dev
   namespace: argocd
@@ -11,25 +11,20 @@ spec:
       revision: HEAD
       files:
         - path: "/Agencies/Agency-1/App-1/app.yml"
-  goTemplate: true
-  template:
-    metadata:
-      name: prod
-    spec:
-      destination:
-        namespace: dev
-        server: 'https://kubernetes.default.svc'
-      source:
-        path: "./Agencies/Agency-1"
-        repoURL: 'https://github.com/fedorovra/argocd-test-proj.git'
-        targetRevision: HEAD
-        directory:
-          recurse: true
-      project: agency
-      syncPolicy:
-        automated:
-          prune: true
-          selfHeal: true
-        syncOptions:
-          - CreateNamespace=true
-          - Validate=true
+  destination:
+    namespace: dev
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: "./Agencies/Agency-1"
+    repoURL: 'https://github.com/fedorovra/argocd-test-proj.git'
+    targetRevision: HEAD
+    directory:
+      recurse: true
+  project: agency
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - Validate=true
