@@ -1,0 +1,29 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: app-1-stage
+  namespace: argocd
+spec:
+  goTemplate: true
+  template:
+    metadata:
+      name: stage
+    spec:
+      project: agency
+      source:
+        path: "./test/"
+        repoURL: 'https://github.com/fedorovra/argocd-test-proj.git'
+        targetRevision: HEAD
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: stage
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+          - Validate=true
+          - RespectIgnoreDifferences=true
+          - Prune=true
