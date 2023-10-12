@@ -2,19 +2,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-1-dev
+  name: {{ .Values.metadata.name }}-dev
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
     namespace: dev
-    server: 'https://kubernetes.default.svc'
+    server: {{ .Values.spec.destination.server }}
   source:
-    path: "./test/"
-    repoURL: 'https://github.com/fedorovra/argocd-test-proj.git'
-    targetRevision: HEAD
-  project: agency
+    path: {{ .Values.spec.source.path }}
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: {{ .Values.spec.source.targetRevision }}
+  project: {{ .Values.spec.project }}
   syncPolicy:
     automated:
       prune: true
