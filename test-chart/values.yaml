@@ -1,0 +1,8 @@
+nginx:
+  name: nginx-app-1
+  replicas: 1
+  container:
+    name: nginx
+    image: nginx:latest
+    port: 80
+

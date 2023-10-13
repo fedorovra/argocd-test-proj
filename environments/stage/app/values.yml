@@ -1,0 +1,8 @@
+# Default chart values override file
+
+namespace: stage
+
+finenomore:
+  ingress:
+    host: stage.158.160.58.205.nip.io
+
