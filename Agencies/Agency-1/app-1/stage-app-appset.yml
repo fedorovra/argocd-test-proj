@@ -14,7 +14,7 @@ spec:
   goTemplate: true
   template:
     metadata:
-      name: stage
+      name: app-1-stage
     spec:
       project: agency
       sources:
@@ -26,7 +26,7 @@ spec:
           targetRevision: '{{ .chart.version }}'
           path: "./test-chart/"
           helm:
-            releaseName: stage
+            releaseName: app-1-stage
             valueFiles:
               - $values/stage/{{ .path.basename }}/values.yml
       destination:
