@@ -27,8 +27,6 @@ spec:
           path: "./test-chart/"
           helm:
             releaseName: app-1-stage
-            valueFiles:
-              - ./test-chart/values.yml
       destination:
         server: https://kubernetes.default.svc
         namespace: stage
