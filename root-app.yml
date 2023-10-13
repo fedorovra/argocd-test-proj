@@ -8,7 +8,7 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: app-1
+    namespace: default
     server: 'https://kubernetes.default.svc'
   source:
     path: "./Agencies/Agency-1/app-1/"
@@ -16,7 +16,7 @@ spec:
     targetRevision: HEAD
     directory:
       recurse: true
-  project: agency
+  project: default
   syncPolicy:
     automated:
       prune: true
