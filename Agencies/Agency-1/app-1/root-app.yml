@@ -16,7 +16,7 @@ spec:
     targetRevision: HEAD
     directory:
       recurse: true
-  project: default
+  project: agency
   syncPolicy:
     automated:
       prune: true
