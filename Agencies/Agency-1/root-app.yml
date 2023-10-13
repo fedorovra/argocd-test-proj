@@ -16,7 +16,6 @@ spec:
     targetRevision: HEAD
     directory:
       recurse: true
-      exclude: 'root-app.yml'
   project: default
   syncPolicy:
     automated:
