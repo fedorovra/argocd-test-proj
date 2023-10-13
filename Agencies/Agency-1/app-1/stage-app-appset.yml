@@ -23,12 +23,12 @@ spec:
           ref: values
           path: "./environments/"
         - repoURL: https://github.com/fedorovra/argocd-test-proj.git
-          targetRevision: '{{ .chart.version }}'
+          targetRevision: HEAD
           path: "./test-chart/"
           helm:
             releaseName: app-1-stage
             valueFiles:
-              - $values/stage/{{ .path.basename }}/values.yml
+              - ./environments/stage/app/values.yml
       destination:
         server: https://kubernetes.default.svc
         namespace: stage
