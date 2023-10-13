@@ -10,7 +10,7 @@ spec:
       repoURL: https://github.com/fedorovra/argocd-test-proj.git
       revision: HEAD
       files:
-        - path: "./environments/stage/app/config.yml"
+        - path: "environments/stage/app/config.yml"
   goTemplate: true
   template:
     metadata:
@@ -21,10 +21,10 @@ spec:
         - repoURL: https://github.com/fedorovra/argocd-test-proj.git
           targetRevision: HEAD
           ref: values
-          path: "./environments/"
+          path: "environments"
         - repoURL: https://github.com/fedorovra/argocd-test-proj.git
           targetRevision: HEAD
-          path: "./test-chart/"
+          path: "test-chart"
           helm:
             releaseName: app-1-stage
       destination:
